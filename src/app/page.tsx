@@ -144,7 +144,6 @@ function ServiceCard({
       transition={{ duration: 0.5, delay: delay }}
       className="group relative bg-gradient-to-br from-gray-900/60 to-gray-800/40 backdrop-blur-lg p-8 rounded-3xl border border-blue-500/20 hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20"
     >
-      <div className="text-5xl mb-4">{icon}</div>
       <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
       <p className="text-white/70 leading-relaxed">{description}</p>
     </motion.div>
@@ -181,37 +180,37 @@ function ApproachStep({
 // Data
 const services = [
   {
-    icon: "🔍",
+    icon: "",
     title: "AI Assessment",
     description:
       "Evaluate your current operations to identify high-impact opportunities where AI can deliver measurable value.",
   },
   {
-    icon: "🛠️",
+    icon: "",
     title: "Implementation Strategy",
     description:
       "Develop a roadmap for successful AI adoption, including tool selection, team training, and risk mitigation.",
   },
   {
-    icon: "⚙️",
+    icon: "",
     title: "Technical Integration",
     description:
       "Seamless integration of AI solutions into your existing systems and workflows with minimal disruption.",
   },
   {
-    icon: "📊",
+    icon: "",
     title: "Performance Optimization",
     description:
       "Continuously monitor and refine your AI implementations to maximize efficiency and ROI over time.",
   },
   {
-    icon: "👥",
+    icon: "",
     title: "Team Training",
     description:
       "Empower your team with the knowledge and skills to work effectively with AI tools and systems.",
   },
   {
-    icon: "🚀",
+    icon: "",
     title: "Innovation Consulting",
     description:
       "Explore emerging AI technologies and their applications to keep your business competitive and forward-thinking.",
