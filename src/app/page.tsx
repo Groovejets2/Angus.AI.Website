@@ -1,223 +1,171 @@
-"use client";
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Image from "next/image";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { SiteHeader } from "@/components/ui/site-header";
+import { HeroBackground } from "@/components/ui/hero-background";
+import { SectionEyebrow } from "@/components/ui/section-eyebrow";
+import {
+  CAL_URL,
+  CONTACT_EMAIL,
+  hero,
+  services,
+  approaches,
+  ctaSection,
+  type Service,
+} from "@/lib/site-content";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
-      {/* Hero Section — CSS orb animation, zero CPU */}
-      <section className="relative h-screen w-full overflow-hidden bg-[#04040f]">
-        <div className="orb orb-1" />
-        <div className="orb orb-2" />
-        <div className="orb orb-3" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 md:px-10 text-center">
-          <h1 className="font-display text-white text-4xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
-            Transform Your Business
-            <br />
-            <span className="bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
-              With Artificial Intelligence
-            </span>
+    <main id="top" className="min-h-screen bg-[var(--ink-0)] text-[var(--text-primary)]">
+      <SiteHeader />
+
+      {/* HERO */}
+      <section className="relative isolate flex min-h-[calc(100vh-3.5rem)] w-full items-center overflow-hidden border-b border-[var(--ink-edge)] px-4 md:min-h-[calc(100vh-4rem)] md:px-10">
+        <HeroBackground />
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-start text-left">
+          <SectionEyebrow className="mb-6">{hero.eyebrow}</SectionEyebrow>
+          <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+            {hero.title}
           </h1>
-          <p className="text-white/70 text-lg md:text-2xl max-w-2xl mb-10 font-light">
-            Expert guidance to identify, implement, and optimize AI solutions
-            that solve real problems and drive measurable ROI.
+          <p className="mt-6 max-w-2xl text-base text-[var(--text-secondary)] md:text-lg">
+            {hero.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row items-center gap-6">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-5">
             <InteractiveHoverButton
-              text="Get Started"
-              className="w-48 h-12 text-lg bg-blue-600 hover:bg-blue-700 border-blue-500"
+              href={CAL_URL}
+              text={hero.primaryCta}
+              className="w-44 bg-[var(--brand-accent)] text-[var(--ink-0)] border-transparent"
             />
             <InteractiveHoverButton
-              text="Learn More"
-              className="w-48 h-12 text-lg bg-transparent border-white/30"
+              href="#services"
+              text={hero.secondaryCta}
+              className="w-44"
             />
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 px-4 md:px-10 bg-gradient-to-b from-black via-gray-900 to-black">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-6">
-            Our Services
+      {/* SERVICES */}
+      <section id="services" className="border-b border-[var(--ink-edge)] px-4 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <SectionEyebrow className="mb-4">Services</SectionEyebrow>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            What we do
           </h2>
-          <p className="text-white/60 text-center text-lg mb-16 max-w-2xl mx-auto">
-            Comprehensive AI solutions tailored to your business needs
+          <p className="mt-4 max-w-2xl text-[var(--text-secondary)] md:text-lg">
+            Six places where we tend to add the most value. We will tell you which apply to you.
           </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, idx) => (
-              <ServiceCard key={idx} {...service} />
+          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-[var(--ink-edge)] bg-[var(--ink-edge)] md:grid-cols-2 lg:grid-cols-3">
+            {services.map((s) => (
+              <ServiceCard key={s.title} service={s} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Approach Section */}
-      <section className="py-20 px-4 md:px-10 bg-black">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-16">
-            Our Approach
+      {/* APPROACH - has the editorial image slot */}
+      <section id="approach" className="border-b border-[var(--ink-edge)] px-4 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <SectionEyebrow className="mb-4">Approach</SectionEyebrow>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            How we work
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {approaches.map((step, idx) => (
-              <ApproachStep key={idx} {...step} number={idx + 1} />
-            ))}
+          <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_360px]">
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+              {approaches.map((step, idx) => (
+                <div key={step.title}>
+                  <div className="font-display text-sm font-medium text-[var(--brand-accent)]">
+                    {String(idx + 1).padStart(2, "0")}
+                  </div>
+                  <h3 className="font-display mt-3 text-xl font-bold">{step.title}</h3>
+                  <p className="mt-3 text-[var(--text-secondary)] leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div
+              data-image-slot="approach-accent"
+              className="relative hidden aspect-[3/4] w-full overflow-hidden rounded-2xl border border-[var(--ink-edge)] bg-[var(--ink-1)] lg:block"
+            >
+              {/* image inserted in Task 10 step 4 */}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 md:px-10 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-6">
-            Ready to Transform Your Business?
+      {/* CTA */}
+      <section id="contact" className="px-4 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <SectionEyebrow className="mb-4">{ctaSection.eyebrow}</SectionEyebrow>
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
+            {ctaSection.title}
           </h2>
-          <p className="text-white/70 text-xl mb-10">
-            Let&apos;s explore how AI can solve your toughest challenges and drive
-            growth.
+          <p className="mt-5 text-base text-[var(--text-secondary)] md:text-lg">
+            {ctaSection.subtitle}
           </p>
-          <InteractiveHoverButton
-            text="Get Started"
-            className="w-64 h-14 text-xl bg-blue-600 hover:bg-blue-700 border-blue-500"
-          />
+          <div className="mt-10 flex justify-center">
+            <InteractiveHoverButton
+              href={CAL_URL}
+              text={ctaSection.buttonLabel}
+              className="w-56 bg-[var(--brand-accent)] text-[var(--ink-0)] border-transparent"
+            />
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black border-t border-white/10 py-12 px-4 md:px-10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+      {/* FOOTER */}
+      <footer className="border-t border-[var(--ink-edge)] px-4 py-14 md:px-10">
+        <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-4">Angus AI</h3>
-            <p className="text-white/60">
-              Transforming businesses through intelligent AI implementation.
+            <p className="font-display text-lg font-bold">
+              Angus<span className="text-[var(--brand-accent)]">.</span>AI
+            </p>
+            <p className="mt-3 max-w-xs text-sm text-[var(--text-secondary)]">
+              Independent AI strategy and implementation for New Zealand businesses.
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Services</h4>
-            <ul className="space-y-2 text-white/60">
-              <li>AI Assessment</li>
-              <li>Implementation</li>
-              <li>Optimization</li>
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">Site</p>
+            <ul className="mt-4 space-y-2 text-sm text-[var(--text-secondary)]">
+              <li><a href="#services" className="hover:text-[var(--text-primary)]">Services</a></li>
+              <li><a href="#approach" className="hover:text-[var(--text-primary)]">Approach</a></li>
+              <li><a href="#contact" className="hover:text-[var(--text-primary)]">Contact</a></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Connect</h4>
-            <ul className="space-y-2 text-white/60">
-              <li>hello@angus-ai.com</li>
-              <li>LinkedIn</li>
-              <li>Twitter</li>
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">Contact</p>
+            <ul className="mt-4 space-y-2 text-sm text-[var(--text-secondary)]">
+              <li>
+                <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[var(--text-primary)]">
+                  {CONTACT_EMAIL}
+                </a>
+              </li>
+              <li>
+                <a href={CAL_URL} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text-primary)]">
+                  Book a call
+                </a>
+              </li>
             </ul>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10 text-center text-white/40">
-          <p>&copy; 2026 Angus AI. All rights reserved.</p>
+        <div className="mx-auto mt-12 max-w-7xl border-t border-[var(--ink-edge)] pt-6 text-center text-xs text-[var(--text-muted)]">
+          &copy; 2026 Angus AI. All rights reserved.
         </div>
       </footer>
     </main>
   );
 }
 
-// Service Card Component
-function ServiceCard({
-  icon,
-  title,
-  description,
-}: {
-  icon: string;
-  title: string;
-  description: string;
-}) {
+function ServiceCard({ service }: { service: Service }) {
+  const Icon = service.icon;
   return (
-    <div className="group relative bg-gradient-to-br from-gray-900/60 to-gray-800/40 backdrop-blur-lg p-8 rounded-3xl border border-blue-500/20 hover:border-blue-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20">
-      <div className="text-5xl mb-4">{icon}</div>
-      <h3 className="font-display text-2xl font-bold text-white mb-4">{title}</h3>
-      <p className="text-white/70 leading-relaxed">{description}</p>
+    <div className="group relative flex flex-col bg-[var(--ink-0)] p-8 transition-colors duration-200 hover:bg-[var(--ink-1)]">
+      <Icon className="size-6 text-[var(--brand-accent)]" strokeWidth={1.5} aria-hidden />
+      <h3 className="font-display mt-5 text-lg font-bold">{service.title}</h3>
+      <p className="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
+        {service.description}
+      </p>
     </div>
   );
 }
-
-// Approach Step Component
-function ApproachStep({
-  number,
-  title,
-  description,
-}: {
-  number: number;
-  title: string;
-  description: string;
-}) {
-  return (
-    <div className="relative bg-gradient-to-br from-blue-900/30 to-purple-900/20 backdrop-blur-lg p-8 rounded-3xl border border-blue-500/30 hover:border-blue-400 transition-all duration-300 hover:scale-105">
-      <div className="text-6xl font-bold text-blue-500/30 mb-4">
-        {String(number).padStart(2, "0")}
-      </div>
-      <h3 className="font-display text-2xl font-bold text-white mb-4">{title}</h3>
-      <p className="text-white/70 leading-relaxed">{description}</p>
-    </div>
-  );
-}
-
-// Data
-const services = [
-  {
-    icon: "🔍",
-    title: "AI Assessment",
-    description:
-      "Evaluate your current operations to identify high-impact opportunities where AI can deliver measurable value.",
-  },
-  {
-    icon: "🛠️",
-    title: "Implementation Strategy",
-    description:
-      "Develop a roadmap for successful AI adoption, including tool selection, team training, and risk mitigation.",
-  },
-  {
-    icon: "⚙️",
-    title: "Technical Integration",
-    description:
-      "Seamless integration of AI solutions into your existing systems and workflows with minimal disruption.",
-  },
-  {
-    icon: "📊",
-    title: "Performance Optimization",
-    description:
-      "Continuously monitor and refine your AI implementations to maximize efficiency and ROI over time.",
-  },
-  {
-    icon: "👥",
-    title: "Team Training",
-    description:
-      "Empower your team with the knowledge and skills to work effectively with AI tools and systems.",
-  },
-  {
-    icon: "🚀",
-    title: "Innovation Consulting",
-    description:
-      "Explore emerging AI technologies and their applications to keep your business competitive and forward-thinking.",
-  },
-];
-
-const approaches = [
-  {
-    title: "Discover",
-    description:
-      "Deep dive into your business operations, challenges, and goals to identify where AI creates real value.",
-  },
-  {
-    title: "Design",
-    description:
-      "Craft a customized AI strategy aligned with your business objectives, resources, and timeline.",
-  },
-  {
-    title: "Deploy",
-    description:
-      "Execute the implementation with precision, minimizing disruption and ensuring team readiness.",
-  },
-  {
-    title: "Optimize",
-    description:
-      "Continuously refine and expand your AI systems based on real-world performance data and evolving needs.",
-  },
-];
