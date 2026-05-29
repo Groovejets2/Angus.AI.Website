@@ -174,3 +174,30 @@ section[id], main[id] {
 }
 
 /* ===== Hero background keyframes added in Task 4 from D1 ===== */
+.hero-bg-grid {
+  position: absolute; inset: 0;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  padding: 6vh 4vw;
+  gap: 0;
+  pointer-events: none;
+}
+.hero-bg-grid__dot {
+  align-self: center;
+  justify-self: center;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.25;
+  animation: hero-pulse 6s ease-in-out infinite;
+}
+.hero-bg-grid__dot:nth-child(7n) {
+  background: var(--brand-accent);
+  opacity: 0.35;
+}
+@keyframes hero-pulse {
+  0%, 100% { opacity: 0.18; transform: scale(1); }
+  50%      { opacity: 0.55; transform: scale(1.4); }
+}
