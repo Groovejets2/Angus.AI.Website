@@ -1,16 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["500", "700"],   // pruned from 5 weights to 2 - saves ~80KB woff2
 });
 
 export const metadata: Metadata = {
-  title: "Angus AI - AI Implementation Consulting",
+  title: "Angus AI - AI strategy and implementation for NZ businesses",
   description:
-    "Expert guidance to identify, implement, and optimize AI solutions that solve real problems and drive measurable ROI.",
+    "Independent AI guidance for New Zealand businesses. We help leaders identify, implement, and optimise AI where it earns its keep - and avoid where it does not.",
 };
 
 export default function RootLayout({
@@ -20,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} font-sans antialiased bg-black`}>
+      <body className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased bg-black`}>
         {children}
       </body>
     </html>
