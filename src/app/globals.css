@@ -7,7 +7,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), var(--font-inter), ui-sans-serif, sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -122,8 +123,54 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
   }
   html {
     @apply font-sans;
   }
+  .font-display {
+    font-family: var(--font-display);
+  }
 }
+
+/* ===== Angus AI Brand Tokens =====
+   Prefixed with --brand-* to avoid colliding with shadcn's --accent, --primary, etc.
+   The existing shadcn :root / .dark blocks above are kept intact for any shadcn
+   components that need them (button.tsx, etc.). */
+:root {
+  /* Surfaces */
+  --ink-0: #0B0B0E;        /* page background */
+  --ink-1: #15161B;        /* card surface */
+  --ink-edge: rgba(255,255,255,0.06);
+
+  /* Text */
+  --text-primary: #F4F4F2;
+  --text-secondary: rgba(244,244,242,0.62);
+  --text-muted: rgba(244,244,242,0.40);
+
+  /* Brand accent (resolved at Phase 3 from D2 - default muted gold) */
+  --brand-accent: #C8A86A;
+  --brand-accent-soft: rgba(200,168,106,0.14);
+
+  /* Motion */
+  --hero-anim-duration: 50s;
+}
+
+/* ===== Smooth scroll + sticky-header offset for in-page anchors ===== */
+html { scroll-behavior: smooth; }
+section[id], main[id] {
+  scroll-margin-top: 4rem;   /* matches md:h-16 header height */
+}
+
+/* ===== Reduced motion: kill keyframe animations only =====
+   Transitions are intentionally NOT disabled - they are short and user-initiated
+   (button hover, link colour change). Disabling them would make hover snap
+   on/off, which looks broken rather than respectful. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ===== Hero background keyframes added in Task 4 from D1 ===== */
