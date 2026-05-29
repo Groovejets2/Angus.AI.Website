@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Image from "next/image";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { SiteHeader } from "@/components/ui/site-header";
@@ -88,7 +87,13 @@ export default function Home() {
               data-image-slot="approach-accent"
               className="relative hidden aspect-[3/4] w-full overflow-hidden rounded-2xl border border-[var(--ink-edge)] bg-[var(--ink-1)] lg:block"
             >
-              {/* image inserted in Task 10 step 4 */}
+              <Image
+                src="/images/approach-accent.webp"
+                alt=""
+                fill
+                sizes="360px"
+                className="object-cover opacity-80 mix-blend-luminosity"
+              />
             </div>
           </div>
         </div>
