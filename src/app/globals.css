@@ -203,3 +203,22 @@ section[id], main[id] {
   0%, 100% { opacity: 0.35; transform: scale(1); }
   50%      { opacity: 0.85; transform: scale(1.5); }
 }
+
+/* Continuity backdrop - shared hero image as a faint static accent under each section.
+   Same file as the hero bg, so it loads from cache. Pure CSS, no JS, no animation. */
+.section-backdrop {
+  position: relative;
+  isolation: isolate;
+}
+.section-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("/images/hero-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: scroll;
+  opacity: 0.07;
+  pointer-events: none;
+}

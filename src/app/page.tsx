@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="border-b border-[var(--ink-edge)] px-4 py-24 md:px-10 md:py-32">
+      <section id="services" className="section-backdrop border-b border-[var(--ink-edge)] px-4 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-7xl">
           <SectionEyebrow className="mb-4">Services</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* APPROACH - has the editorial image slot */}
-      <section id="approach" className="border-b border-[var(--ink-edge)] px-4 py-24 md:px-10 md:py-32">
+      <section id="approach" className="section-backdrop border-b border-[var(--ink-edge)] px-4 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-7xl">
           <SectionEyebrow className="mb-4">Approach</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
@@ -96,7 +96,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section id="contact" className="px-4 py-24 md:px-10 md:py-32">
+      <section id="contact" className="section-backdrop px-4 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-3xl text-center">
           <SectionEyebrow className="mb-4">{ctaSection.eyebrow}</SectionEyebrow>
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
