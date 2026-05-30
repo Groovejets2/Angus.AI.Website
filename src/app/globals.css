@@ -204,8 +204,9 @@ section[id], main[id] {
   50%      { opacity: 0.85; transform: scale(1.5); }
 }
 
-/* Continuity backdrop - shared hero image as a faint static accent under each section.
-   Same file as the hero bg, so it loads from cache. Pure CSS, no JS, no animation. */
+/* Continuity backdrop - shared hero image fades in as section scrolls into view.
+   Same file as hero bg, cached. Scroll-driven animation for opacity fade-in (modern browsers).
+   Fallback to static opacity 0.07 for older browsers. */
 .section-backdrop {
   position: relative;
   isolation: isolate;
@@ -219,6 +220,91 @@ section[id], main[id] {
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
-  opacity: 0.07;
+  opacity: 0.07; /* Fallback for older browsers */
   pointer-events: none;
+}
+
+/* Modern browsers: fade in as section enters view */
+@supports (animation-timeline: view()) {
+  .section-backdrop::before {
+    opacity: 0;
+    animation: backdrop-fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+  }
+
+  @keyframes backdrop-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.07;
+    }
+  }
+}
+
+/* ===== Particle Hero: floating particles with colour cycling =====
+   GPU-accelerated with transform3d + opacity only. ~1.2KB CSS.
+   Task 1.1.7: hero-animation-upgrade. Replaces hero-bg-grid constellation. */
+.particle-hero {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  animation: particle-float 12s ease-in-out infinite, particle-colour-cycle 6s ease-in-out infinite;
+}
+.particle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* Floating motion: gentle drift upward with subtle sway (GPU-accelerated) */
+@keyframes particle-float {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate3d(20px, -60px, 0);
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate3d(0, -120px, 0);
+    opacity: 0;
+  }
+}
+
+/* Colour cycling: gold → white → grey with smooth crossfade */
+@keyframes particle-colour-cycle {
+  0%, 100% {
+    color: var(--brand-accent);
+  }
+  33% {
+    color: #FFFFFF;
+  }
+  66% {
+    color: var(--text-muted);
+  }
+}
+
+/* Reduced motion: disable particle animations */
+@media (prefers-reduced-motion: reduce) {
+  .particle {
+    animation: none;
+  }
 }

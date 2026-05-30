@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Mail } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { SiteHeader } from "@/components/ui/site-header";
-import { ParticleHero } from "@/components/ui/particle-hero";
+import { HeroBackground } from "@/components/ui/hero-background";
 import { SectionEyebrow } from "@/components/ui/section-eyebrow";
 import {
   CAL_URL,
@@ -30,7 +30,7 @@ export default function Home() {
           className="absolute inset-0 object-cover opacity-40"
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[var(--ink-0)]/30 via-transparent to-[var(--ink-0)]/70" />
-        <ParticleHero />
+        <HeroBackground />
         <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-start text-left">
           <SectionEyebrow className="mb-6">{hero.eyebrow}</SectionEyebrow>
           <h1 className="font-display text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
@@ -142,13 +142,15 @@ export default function Home() {
                   href={`mailto:${CONTACT_EMAIL}`}
                   aria-label={`Email ${CONTACT_EMAIL}`}
                   title={CONTACT_EMAIL}
-                  className="group inline-flex items-center gap-2 hover:text-[var(--brand-accent)]"
+                  className="group relative inline-flex h-5 items-center"
                 >
+                  <span className="transition-opacity duration-200 group-hover:opacity-0">
+                    Email Angus.AI
+                  </span>
                   <Mail
                     aria-hidden
-                    className="size-4 text-[var(--brand-accent)] transition-all duration-300 group-hover:animate-pulse group-hover:drop-shadow-[0_0_8px_rgba(200,168,106,0.6)]"
+                    className="absolute left-0 top-1/2 size-4 -translate-y-1/2 text-[var(--brand-accent)] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                   />
-                  <span>Email Angus.AI</span>
                 </a>
               </li>
               <li>
