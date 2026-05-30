@@ -22,7 +22,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative isolate flex min-h-[calc(100vh-3.5rem)] w-full items-center overflow-hidden border-b border-[var(--ink-edge)] px-4 md:min-h-[calc(100vh-4rem)] md:px-10">
         <Image
-          src="/images/hero-background.jpg"
+          src="/images/hero-background.webp"
           alt=""
           fill
           priority
