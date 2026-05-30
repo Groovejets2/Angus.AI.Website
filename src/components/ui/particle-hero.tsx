@@ -3,7 +3,7 @@
 // ~40 particles, ~1.2KB of CSS
 
 export function ParticleHero() {
-  const particleCount = 12; // Large particles, fewer count for visual clarity
+  const particleCount = 35; // 3-4mm particles, visible but not overwhelming
 
   return (
     <div aria-hidden className="particle-hero">
