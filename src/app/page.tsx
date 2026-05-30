@@ -78,32 +78,18 @@ export default function Home() {
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-5xl">
             How we work
           </h2>
-          <div className="mt-14 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_360px]">
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
-              {approaches.map((step, idx) => (
-                <div key={step.title}>
-                  <div className="font-display text-sm font-medium text-[var(--brand-accent)]">
-                    {String(idx + 1).padStart(2, "0")}
-                  </div>
-                  <h3 className="font-display mt-3 text-xl font-bold">{step.title}</h3>
-                  <p className="mt-3 text-[var(--text-secondary)] leading-relaxed">
-                    {step.description}
-                  </p>
+          <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {approaches.map((step, idx) => (
+              <div key={step.title}>
+                <div className="font-display text-sm font-medium text-[var(--brand-accent)]">
+                  {String(idx + 1).padStart(2, "0")}
                 </div>
-              ))}
-            </div>
-            <div
-              data-image-slot="approach-accent"
-              className="relative hidden aspect-[3/4] w-full overflow-hidden rounded-2xl border border-[var(--ink-edge)] bg-[var(--ink-1)] lg:block"
-            >
-              <Image
-                src="/images/approach-accent.jpg"
-                alt=""
-                fill
-                sizes="360px"
-                className="object-cover opacity-80 mix-blend-luminosity"
-              />
-            </div>
+                <h3 className="font-display mt-3 text-xl font-bold">{step.title}</h3>
+                <p className="mt-3 text-[var(--text-secondary)] leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
