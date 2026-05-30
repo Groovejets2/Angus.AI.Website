@@ -204,8 +204,7 @@ section[id], main[id] {
   50%      { opacity: 0.85; transform: scale(1.5); }
 }
 
-/* Continuity backdrop - hero image with glitch shimmer as section enters.
-   Quick sparkle/shimmer effect on backdrop as it comes into view. */
+/* Section backdrop - subtle background texture (no animation, no effects) */
 .section-backdrop {
   position: relative;
   isolation: isolate;
@@ -219,26 +218,8 @@ section[id], main[id] {
   background-size: cover;
   background-position: center;
   background-attachment: scroll;
-  opacity: 0;
+  opacity: 0.07;
   pointer-events: none;
-  animation: backdrop-glitch-shimmer ease-out forwards;
-  animation-timeline: view();
-  animation-range: entry 0% cover 30%;
-}
-
-@keyframes backdrop-glitch-shimmer {
-  0% {
-    opacity: 0;
-    filter: brightness(2) saturate(0);
-  }
-  50% {
-    opacity: 0.15;
-    filter: brightness(1.2) saturate(0.5);
-  }
-  100% {
-    opacity: 0.07;
-    filter: brightness(1) saturate(1);
-  }
 }
 
 /* ===== Particle Hero: floating particles with colour cycling =====
@@ -251,10 +232,10 @@ section[id], main[id] {
 }
 .particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: rgba(204, 204, 204, 0.6);
+  background: rgba(204, 204, 204, 0.5);
   will-change: transform, opacity;
   animation: particle-float 12s ease-in-out infinite;
 }
