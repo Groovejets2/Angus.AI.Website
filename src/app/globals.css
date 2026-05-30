@@ -308,3 +308,16 @@ section[id], main[id] {
     animation: none;
   }
 }
+
+/* Email icon glow fade: opacity-only, no scaling (prevents cursor jitter on hover) */
+@keyframes glow-fade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+.animate-glow-fade {
+  animation: glow-fade 1.5s ease-in-out infinite;
+}

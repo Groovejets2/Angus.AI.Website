@@ -146,7 +146,7 @@ export default function Home() {
                 >
                   <Mail
                     aria-hidden
-                    className="size-4 text-[var(--brand-accent)] transition-all duration-300 group-hover:animate-pulse group-hover:drop-shadow-[0_0_8px_rgba(200,168,106,0.6)]"
+                    className="size-4 text-[var(--brand-accent)] transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(200,168,106,0.8)] group-hover:animate-glow-fade"
                   />
                   <span>Email Angus.AI</span>
                 </a>
