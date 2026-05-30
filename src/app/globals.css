@@ -249,13 +249,13 @@ section[id], main[id] {
 }
 .particle {
   position: absolute;
-  width: 45px;
-  height: 45px;
+  width: 135px;
+  height: 135px;
   border-radius: 50%;
-  background: rgba(204, 204, 204, 0.15);
+  background: rgba(204, 204, 204, 0.12);
   will-change: transform, opacity;
   animation: particle-float 12s ease-in-out infinite;
-  box-shadow: inset 0 0 8px rgba(204, 204, 204, 0.1);
+  box-shadow: inset 0 0 20px rgba(204, 204, 204, 0.08);
 }
 
 /* Floating motion: gentle drift upward with subtle sway (GPU-accelerated) */
