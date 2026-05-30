@@ -20,6 +20,15 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative isolate flex min-h-[calc(100vh-3.5rem)] w-full items-center overflow-hidden border-b border-[var(--ink-edge)] px-4 md:min-h-[calc(100vh-4rem)] md:px-10">
+        <Image
+          src="/images/hero-background.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="absolute inset-0 object-cover opacity-40"
+        />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-[var(--ink-0)]/30 via-transparent to-[var(--ink-0)]/70" />
         <HeroBackground />
         <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-start text-left">
           <SectionEyebrow className="mb-6">{hero.eyebrow}</SectionEyebrow>
