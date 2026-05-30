@@ -21,7 +21,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative isolate flex min-h-[calc(100vh-3.5rem)] w-full items-center overflow-hidden border-b border-[var(--ink-edge)] px-4 md:min-h-[calc(100vh-4rem)] md:px-10">
         <Image
-          src="/images/hero-background.webp"
+          src="/images/hero-background.jpg"
           alt=""
           fill
           priority
@@ -97,7 +97,7 @@ export default function Home() {
               className="relative hidden aspect-[3/4] w-full overflow-hidden rounded-2xl border border-[var(--ink-edge)] bg-[var(--ink-1)] lg:block"
             >
               <Image
-                src="/images/approach-accent.webp"
+                src="/images/approach-accent.jpg"
                 alt=""
                 fill
                 sizes="360px"
