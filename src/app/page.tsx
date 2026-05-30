@@ -33,7 +33,7 @@ export default function Home() {
             <InteractiveHoverButton
               href={CAL_URL}
               text={hero.primaryCta}
-              className="w-44 bg-[var(--brand-accent)] text-[var(--ink-0)] border-transparent"
+              className="w-44 bg-[var(--brand-accent)] text-[var(--ink-0)] border-transparent hover:bg-[var(--brand-accent)]/90"
             />
             <InteractiveHoverButton
               href="#services"
@@ -113,7 +113,7 @@ export default function Home() {
             <InteractiveHoverButton
               href={CAL_URL}
               text={ctaSection.buttonLabel}
-              className="w-56 bg-[var(--brand-accent)] text-[var(--ink-0)] border-transparent"
+              className="w-56 bg-[var(--brand-accent)] text-[var(--ink-0)] border-transparent hover:bg-[var(--brand-accent)]/90"
             />
           </div>
         </div>

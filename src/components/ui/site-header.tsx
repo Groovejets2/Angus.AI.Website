@@ -24,12 +24,12 @@ export function SiteHeader() {
           Angus<span className="text-[var(--brand-accent)]">.</span>AI
         </a>
 
-        <nav className="hidden items-center gap-7 text-sm text-[var(--text-secondary)] md:flex">
+        <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--text-primary)] md:flex">
           {NAV.map((n) => (
             <a
               key={n.href}
               href={n.href}
-              className="transition-colors hover:text-[var(--text-primary)]"
+              className="relative transition-colors after:absolute after:left-0 after:-bottom-1 after:h-[1.5px] after:w-0 after:bg-[var(--brand-accent)] after:transition-all after:duration-200 hover:after:w-full"
             >
               {n.label}
             </a>
@@ -53,13 +53,13 @@ export function SiteHeader() {
 
       {open && (
         <div className="border-t border-[var(--ink-edge)] bg-[var(--ink-0)] md:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3 text-base text-[var(--text-secondary)]">
+          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3 text-base">
             {NAV.map((n) => (
               <a
                 key={n.href}
                 href={n.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-2 py-3 transition-colors hover:bg-[var(--ink-1)] hover:text-[var(--text-primary)]"
+                className="rounded-md px-2 py-3 text-[var(--text-primary)] transition-colors hover:bg-[var(--ink-1)]"
               >
                 {n.label}
               </a>
