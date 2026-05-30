@@ -17,7 +17,7 @@ export const hero = {
   subtitle:
     "Independent guidance to identify where AI earns its keep, implement it cleanly, and measure the return. No jargon, no overreach.",
   primaryCta: "Book a call",
-  secondaryCta: "How we work",
+  secondaryCta: "What we do",
 };
 
 export type Service = {
