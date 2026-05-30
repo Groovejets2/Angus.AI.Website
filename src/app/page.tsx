@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Mail } from "lucide-react";
 import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
 import { SiteHeader } from "@/components/ui/site-header";
 import { HeroBackground } from "@/components/ui/hero-background";
@@ -137,8 +138,19 @@ export default function Home() {
             <p className="text-sm font-medium uppercase tracking-[0.18em] text-[var(--text-muted)]">Contact</p>
             <ul className="mt-4 space-y-2 text-sm text-[var(--text-secondary)]">
               <li>
-                <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[var(--text-primary)]">
-                  {CONTACT_EMAIL}
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  aria-label={`Email ${CONTACT_EMAIL}`}
+                  title={CONTACT_EMAIL}
+                  className="group relative inline-flex h-5 items-center"
+                >
+                  <span className="transition-opacity duration-200 group-hover:opacity-0">
+                    Email Angus.AI
+                  </span>
+                  <Mail
+                    aria-hidden
+                    className="absolute left-0 top-1/2 size-4 -translate-y-1/2 text-[var(--brand-accent)] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                  />
                 </a>
               </li>
               <li>
