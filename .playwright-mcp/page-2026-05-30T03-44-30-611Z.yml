@@ -1,0 +1,118 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - link "Angus.AI" [ref=e5] [cursor=pointer]:
+        - /url: "#top"
+      - navigation [ref=e6]:
+        - link "Services" [ref=e7] [cursor=pointer]:
+          - /url: "#services"
+        - link "Approach" [ref=e8] [cursor=pointer]:
+          - /url: "#approach"
+        - link "Contact" [ref=e9] [cursor=pointer]:
+          - /url: "#contact"
+      - link "Book a call" [ref=e11] [cursor=pointer]:
+        - /url: https://cal.com/angus-ai-hello
+        - generic [ref=e12]: Book a call
+        - img [ref=e13]
+    - generic [ref=e17]:
+      - generic [ref=e18]: AI strategy and implementation
+      - heading "Practical AI for businesses that want results, not hype." [level=1] [ref=e19]
+      - paragraph [ref=e20]: Independent guidance to identify where AI earns its keep, implement it cleanly, and measure the return. No jargon, no overreach.
+      - generic [ref=e21]:
+        - link "Book a call" [ref=e22] [cursor=pointer]:
+          - /url: https://cal.com/angus-ai-hello
+          - generic [ref=e23]: Book a call
+          - img [ref=e24]
+        - link "What we do" [ref=e26] [cursor=pointer]:
+          - /url: "#services"
+          - generic [ref=e27]: What we do
+          - img [ref=e28]
+    - generic [ref=e31]:
+      - generic [ref=e32]: Services
+      - heading "What we do" [level=2] [ref=e33]
+      - paragraph [ref=e34]: Six places where we tend to add the most value. We will tell you which apply to you.
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - img [ref=e37]
+          - heading "AI assessment" [level=3] [ref=e40]
+          - paragraph [ref=e41]: We map your operations and identify where AI delivers measurable value - and where it does not.
+        - generic [ref=e42]:
+          - img [ref=e43]
+          - heading "Implementation strategy" [level=3] [ref=e45]
+          - paragraph [ref=e46]: A clear roadmap covering tooling, sequencing, team training, and risk - sized to your business.
+        - generic [ref=e47]:
+          - img [ref=e48]
+          - heading "Technical integration" [level=3] [ref=e52]
+          - paragraph [ref=e53]: We embed AI into your existing systems and workflows with minimal disruption and full handover.
+        - generic [ref=e54]:
+          - img [ref=e55]
+          - heading "Performance optimisation" [level=3] [ref=e58]
+          - paragraph [ref=e59]: Ongoing tuning so the systems we deliver get better with use, not worse.
+        - generic [ref=e60]:
+          - img [ref=e61]
+          - heading "Team training" [level=3] [ref=e66]
+          - paragraph [ref=e67]: Pragmatic upskilling for the people who will use these tools every day - not vendor demos.
+        - generic [ref=e68]:
+          - img [ref=e69]
+          - heading "Innovation consulting" [level=3] [ref=e72]
+          - paragraph [ref=e73]: An honest read on emerging AI capability and how it applies to your sector right now.
+    - generic [ref=e75]:
+      - generic [ref=e76]: Approach
+      - heading "How we work" [level=2] [ref=e77]
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e80]: "01"
+          - heading "Discover" [level=3] [ref=e81]
+          - paragraph [ref=e82]: We start with your operations, constraints, and goals - then identify where AI creates real value.
+        - generic [ref=e83]:
+          - generic [ref=e84]: "02"
+          - heading "Design" [level=3] [ref=e85]
+          - paragraph [ref=e86]: A focused plan aligned with your timeline and budget. No platforms before problems.
+        - generic [ref=e87]:
+          - generic [ref=e88]: "03"
+          - heading "Deploy" [level=3] [ref=e89]
+          - paragraph [ref=e90]: We execute the rollout with care, keeping disruption low and the team across what is changing.
+        - generic [ref=e91]:
+          - generic [ref=e92]: "04"
+          - heading "Optimise" [level=3] [ref=e93]
+          - paragraph [ref=e94]: Continuous refinement using real performance data and your team's feedback loop.
+    - generic [ref=e96]:
+      - generic [ref=e97]: Get started
+      - heading "Ready to put AI to work?" [level=2] [ref=e98]
+      - paragraph [ref=e99]: Book a short call. We will tell you honestly whether AI is the right move - and if it is, what shape it should take.
+      - link "Book a call" [ref=e101] [cursor=pointer]:
+        - /url: https://cal.com/angus-ai-hello
+        - generic [ref=e102]: Book a call
+        - img [ref=e103]
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - generic [ref=e107]:
+          - paragraph [ref=e108]: Angus.AI
+          - paragraph [ref=e109]: Independent AI strategy and implementation for New Zealand businesses.
+        - generic [ref=e110]:
+          - paragraph [ref=e111]: Site
+          - list [ref=e112]:
+            - listitem [ref=e113]:
+              - link "Services" [ref=e114] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e115]:
+              - link "Approach" [ref=e116] [cursor=pointer]:
+                - /url: "#approach"
+            - listitem [ref=e117]:
+              - link "Contact" [ref=e118] [cursor=pointer]:
+                - /url: "#contact"
+        - generic [ref=e119]:
+          - paragraph [ref=e120]: Contact
+          - list [ref=e121]:
+            - listitem [ref=e122]:
+              - link "Email angus.ai.hello@gmail.com" [ref=e123] [cursor=pointer]:
+                - /url: mailto:angus.ai.hello@gmail.com
+                - generic [ref=e124]: Email Angus.AI
+                - img [ref=e125]
+            - listitem [ref=e128]:
+              - link "Book a call" [ref=e129] [cursor=pointer]:
+                - /url: https://cal.com/angus-ai-hello
+      - generic [ref=e130]: © 2026 Angus AI. All rights reserved.
+  - button "Open Next.js Dev Tools" [ref=e136] [cursor=pointer]:
+    - img [ref=e137]
+  - alert [ref=e140]
